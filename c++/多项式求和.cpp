@@ -16,13 +16,12 @@ int main() {
 
     string expression;
     cin>>expression;
-    for(unsigned int i=0;i<expression.length();++i){
-        if(expression[i]=='/0'&&optStack.empty()) return opnStack.top();
+    for(unsigned int i=0;i<=expression.length();++i){
         if(isopn(expression[i])) {
             opnStack.push(expression[i]-'0');
         }
         else {
-            if(opnStack.empty()){
+            if(optStack.empty()){
                 optStack.push(expression[i]);
             }
             else
@@ -46,12 +45,25 @@ int main() {
                         optStack.push(expression[i]);
                         break;
                     }
+					case 3: {
+						while (optStack.size() != 0) {
+							char opt = optStack.top();
+							optStack.pop();
+							int opn_a = opnStack.top();
+							opnStack.pop();
+							int opn_b = opnStack.top();
+							opnStack.pop();
+							opnStack.push(opt_cal(opt, opn_a, opn_b));
+							
+						}
+					}
 
                 }
 
 
         }
     }
+	cout << opnStack.top();
     system("pause");
     return 0;
 }
@@ -65,15 +77,16 @@ int isopn(char i){
 int opt_cal(char i,int a,int b){
     switch (i){
         case '*':return a * b;
-        case '/':return a/b;
+        case '/':return b/a;
         case '+':return a+b;
-        case '-':return a-b;
+        case '-':return b-a;
         default:return 0;
     }
 }
 
 
 int optCompare(char top_opt,char new_opt){
+	if (new_opt == '\0') return 3;
 
     return optContainer[top_opt-'('][new_opt-'('];
 
