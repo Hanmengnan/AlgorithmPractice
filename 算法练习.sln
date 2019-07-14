@@ -3,24 +3,36 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "算法练习", "算法练习\算法练习.vcxproj", "{7D3FF37F-830F-433B-A2B3-F4A6CD514D58}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "python", "python\python.pyproj", "{F0FEE9E2-095D-4861-A8DD-D3A218E5C224}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c++", "c++\c++.vcxproj", "{B26C528A-0D94-4A17-AFF7-E7C3371BE234}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7D3FF37F-830F-433B-A2B3-F4A6CD514D58}.Debug|x64.ActiveCfg = Debug|x64
-		{7D3FF37F-830F-433B-A2B3-F4A6CD514D58}.Debug|x64.Build.0 = Debug|x64
-		{7D3FF37F-830F-433B-A2B3-F4A6CD514D58}.Debug|x86.ActiveCfg = Debug|Win32
-		{7D3FF37F-830F-433B-A2B3-F4A6CD514D58}.Debug|x86.Build.0 = Debug|Win32
-		{7D3FF37F-830F-433B-A2B3-F4A6CD514D58}.Release|x64.ActiveCfg = Release|x64
-		{7D3FF37F-830F-433B-A2B3-F4A6CD514D58}.Release|x64.Build.0 = Release|x64
-		{7D3FF37F-830F-433B-A2B3-F4A6CD514D58}.Release|x86.ActiveCfg = Release|Win32
-		{7D3FF37F-830F-433B-A2B3-F4A6CD514D58}.Release|x86.Build.0 = Release|Win32
+		{F0FEE9E2-095D-4861-A8DD-D3A218E5C224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0FEE9E2-095D-4861-A8DD-D3A218E5C224}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F0FEE9E2-095D-4861-A8DD-D3A218E5C224}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F0FEE9E2-095D-4861-A8DD-D3A218E5C224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0FEE9E2-095D-4861-A8DD-D3A218E5C224}.Release|x64.ActiveCfg = Release|Any CPU
+		{F0FEE9E2-095D-4861-A8DD-D3A218E5C224}.Release|x86.ActiveCfg = Release|Any CPU
+		{B26C528A-0D94-4A17-AFF7-E7C3371BE234}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{B26C528A-0D94-4A17-AFF7-E7C3371BE234}.Debug|x64.ActiveCfg = Debug|x64
+		{B26C528A-0D94-4A17-AFF7-E7C3371BE234}.Debug|x64.Build.0 = Debug|x64
+		{B26C528A-0D94-4A17-AFF7-E7C3371BE234}.Debug|x86.ActiveCfg = Debug|Win32
+		{B26C528A-0D94-4A17-AFF7-E7C3371BE234}.Debug|x86.Build.0 = Debug|Win32
+		{B26C528A-0D94-4A17-AFF7-E7C3371BE234}.Release|Any CPU.ActiveCfg = Release|Win32
+		{B26C528A-0D94-4A17-AFF7-E7C3371BE234}.Release|x64.ActiveCfg = Release|x64
+		{B26C528A-0D94-4A17-AFF7-E7C3371BE234}.Release|x64.Build.0 = Release|x64
+		{B26C528A-0D94-4A17-AFF7-E7C3371BE234}.Release|x86.ActiveCfg = Release|Win32
+		{B26C528A-0D94-4A17-AFF7-E7C3371BE234}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
