@@ -1,7 +1,6 @@
 #include <iostream>
 #include <algorithm>
 #include <stack>
-#include <stdlib.h>
 #include <string>
 #include <list>
 
@@ -16,12 +15,22 @@ int main() {
 
     string expression;
     cin>>expression;
+	int panduan = 0;
     for(unsigned int i=0;i<=expression.length();++i){
         if(isopn(expression[i])) {
-            opnStack.push(expression[i]-'0');
+			
+			if (panduan == 1) {
+				int temp_num = opnStack.top();
+				opnStack.pop();
+				opnStack.push(temp_num*10+expression[i] - '0');
+			}
+			else opnStack.push(expression[i]-'0');
+			panduan = 1;
         }
         else {
+			panduan = 0;
             if(optStack.empty()){
+				if (opnStack.empty()) exit(0);
                 optStack.push(expression[i]);
             }
             else
