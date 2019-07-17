@@ -1,5 +1,6 @@
 num = int(input())
-price_before = input().split(" ")
+price_before = list(map(int,input().split()))
+print(price_before)
 if len(price_before)==1:
     print(int(price_before[0]))
 else:
