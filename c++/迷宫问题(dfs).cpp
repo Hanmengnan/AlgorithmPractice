@@ -26,6 +26,7 @@ int main() {
 		}
 	}
 	
+
 	cin >> b_x >> b_y >> e_x >> e_y;
 	status[b_x-1][b_y-1] = 1;
 	dfs(b_x-1, b_y-1, 0);
