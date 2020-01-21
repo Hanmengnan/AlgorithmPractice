@@ -1,60 +1,61 @@
 """
-只有20分，活像个弟弟
+90分，勉强合格
 """
-def caldis(t,k,bs):
-    if t==0:
-        return k
+def caldis(dis,type,predis,pretype):
+    if type==0:
+        return 0,predis+dis
     else:
-        return (bs+k)*(bs+k)
+        if  pretype==0:
+            return (pretype+dis),predis+(pretype+dis)*(pretype+dis)
+        else:
+            return (pretype+dis),(pretype+dis)*(pretype+dis)
 
 
 
-nm=list(map(int,input().split(" ")))
+global u
+n,m=list(map(int,input().split(" ")))
 inf=float("inf")
 
-dis=[inf]*(nm[0]+1)
-pre=[0]*(nm[0]+1)
-route=[[0]*(nm[0]+1) for i in range(nm[1])]
-book=[0]*(nm[0]+1)
+dis=[inf]*(n+1)
+
+pretype=[0]*(n+1)
+predis=[0]*(n+1)
+
+route=[[inf]*(n+1) for i in range(n+1)]
+
+book=[0]*(n+1)
 
 
-for i in range(1,nm[1]+1):
-    eroute=list(map(int,input().split(" ")))
-    route[eroute[1]][eroute[2]]=[eroute[0],eroute[3]]
+for i in range(m):
+    t,b,e,l=list(map(int,input().split(" ")))
+    if route[b][e]==inf or route[b][e][0]>l:
+        route[b][e]=route[e][b]=[l,t]
 
-for i in range(1,nm[0]+1):
-    if route[1][i]!=0:
-        dis[i]=route[1][i][1] if route[1][i][0]==0 else route[1][i][1]*route[1][i][1]
-        if route[1][i][0]==1:
-            pre[i]=pre[i]+route[1][i][1]
+for i in range(n+1):
+    if route[1][i]!=inf:
+        
+        _,d=caldis(route[1][i][0],route[1][i][1],0,0)
+        dis[i]=d
+        predis[i]=0
+        pretype[i]=route[1][i][1]*route[1][i][0]
+
 book[1]=1
-
-for i in range(1,nm[0]+1):
+u=0
+for i in range(n+1):
     min=inf
-    for j in range(1,nm[0]+1):
-        if (book[j]==0 and dis[j]<min):
-            u=j
+    for j in range(1,n+1):
+        if book[j]==0 and min>dis[j]:
             min=dis[j]
+            u=j
     book[u]=1
-    for k in range(1,nm[0]+1):
-        if route[u][k]!=0:
-            temp=caldis(route[u][k][0],route[u][k][1],pre[u])
-            #计算当前继续疲劳值
-            if route[u][k][0]==0:
-                #如果目前是大路
-                if dis[k]>dis[u]+temp:
-                    dis[k]=dis[u]+temp
-                pre[k]=0
-            else:
-                if pre[u]==0:
-                    #上一条路是大路
-                    if dis[k]>dis[u]+temp:
-                        dis[k]=dis[u]+temp
-                        pre[k]=pre[u]+route[u][k][1]
-                else:
-                    #是小路
-                    if dis[k]>temp:
-                        dis[k]=temp
-                        pre[k]=pre[u]+route[u][k][1]
+    for j in range(1,n+1):
+        if route[u][j]!=inf and book[j]==0:
+            nowpretype,nowdis=caldis(route[u][j][0],route[u][j][1],dis[u],pretype[u])
+            if dis[j]>nowdis:
+                dis[j]=nowdis
+                pretype[j]=nowpretype
 
-print(dis[nm[0]])
+
+print(dis[n])
+
+
