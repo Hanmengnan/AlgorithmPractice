@@ -1,3 +1,4 @@
+/*8个过了6个*/
 #include<iostream>
 #include<vector>
 #include<stack>
@@ -47,7 +48,7 @@ void init(int n,int m) {
 void mst() {
 	sum = 0;
 	num = 1;
-	while (num < n)
+	while (num <= n)
 	{
 		int min = MAX;
 		int index = 0;
@@ -170,16 +171,16 @@ int main() {
 	
 	if (figure == 1) {
 		mst();
-		only_mst();
+		//only_mst();
 
-		/*cout << sum << endl << "Yes" << endl;*/
+		cout << sum << endl << "Yes" << endl;
 
-		if (mst_num == 1) {
+		/*if (mst_num == 1) {
 			cout << savesum << endl << "Yes" << endl;
 		}
 		else {
 			cout << mst_num << endl << "No" << endl;
-		}
+		}*/
 	}
 	else {
 
