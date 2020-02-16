@@ -269,3 +269,4 @@ __pycache__/
 /c++/Test.cpp
 /c++/字符串模式匹配.exe
 /c++/.vscode/settings.json
+/.vscode/settings.json
