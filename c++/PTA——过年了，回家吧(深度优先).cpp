@@ -1,4 +1,4 @@
-/*5个过了4个*/
+/*5??????4??*/
 
 #include<iostream>
 #include<map>
@@ -96,7 +96,7 @@ int main() {
 
 	string begin, end;
 
-	int d_time;//中转时间
+	int d_time;//??????
 	int begin_index, end_index;
 
 	for (int i = 0; i < m; ++i) {
@@ -115,8 +115,8 @@ int main() {
 	}
 
 	int start_index, aim_index;
-	start_index = train_index[start];//起点
-	aim_index = train_index[aim];//终点
+	start_index = train_index[start];//???
+	aim_index = train_index[aim];//???
 
 	if (start_index == aim_index) {
 		cout << 0 << endl;
