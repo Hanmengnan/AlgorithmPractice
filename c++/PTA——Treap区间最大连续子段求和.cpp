@@ -25,8 +25,8 @@ int main()
         }
         else if (p == 2)
         {
-            sum = nums[kl];
-            result = -999999;
+            result = sum = nums[kl];
+
             for (int j = kl + 1; j <= xr; ++j)
             {
                 sum = max(nums[j], sum + nums[j]);
@@ -37,3 +37,5 @@ int main()
     }
     return 0;
 }
+
+
