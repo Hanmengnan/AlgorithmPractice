@@ -61,7 +61,7 @@ int main()
             break;
     }
     if (sum != n)
-        cout << -1 << endl;
+        cout << "Impossible" << endl;
     else
         cout << sum_dis << endl;
     return 0;
