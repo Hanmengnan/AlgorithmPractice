@@ -17,7 +17,7 @@ void drive(int exist_gas, int aim_station, int num)
     if (exist_gas < dis[aim_station] || num >= max_num)
         return;
     drive(exist_gas - dis[aim_station], aim_station + 1, num);
-    drive(n, aim_station + 1, num + 1);
+    drive(exist_gas, aim_station + 1, num + 1);
 }
 
 int main()
